@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Headers</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>HTTP Headers</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Header Name</th>
+                <th>Header Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="header : ${headers}">
+                <td th:text="${header.key}">Header name</td>
+                <td th:text="${header.value}">Header value</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>
